@@ -8,8 +8,8 @@ public class CarScript : MonoBehaviour
     public GameObject carGameObj;
     public Rigidbody2D carRigidBody;
     public float velocity = 0;
-    public float maxPosVel = 1000;
-    public float maxNegVel = (float)-50;
+    public float maxPosVel = 10;
+    public float maxNegVel = (float)-5;
 
 
     public Vector2 carDirection;
@@ -18,7 +18,7 @@ public class CarScript : MonoBehaviour
     public float theta = 90;
     public float x = 0;
     public float y = 1;
-    public float turningRate = (float)0.00005;
+    public float turningRate = (float)0.5;
 
 
     // Start is called before the first frame update
@@ -36,13 +36,13 @@ public class CarScript : MonoBehaviour
         {
             if (velocity < maxPosVel)
             {
-                velocity += (float)(0.005);
+                velocity += (float)(0.05);
             }
         } else {
             //after a few seconds slow down(not yet implemented add later);
             if(velocity > 0)
             {
-                velocity -= (float)(0.0005);
+                velocity -= (float)(0.025);
             }
         }
 
@@ -50,7 +50,7 @@ public class CarScript : MonoBehaviour
         {
             if (velocity > maxNegVel)
             {
-                velocity -= (float)(0.0025);
+                velocity -= (float)(0.025);
             }
         }
         else
@@ -58,8 +58,14 @@ public class CarScript : MonoBehaviour
             //after a few seconds slow down(not yet implemented add later);
             if (velocity < 0)
             {
-                velocity += (float)(0.00125);
+                velocity += (float)(0.025);
             }
+        }
+        if(velocity > maxPosVel){
+            velocity = maxPosVel;
+        }
+        if(velocity < maxNegVel){
+            velocity = maxNegVel;
         }
 
 
