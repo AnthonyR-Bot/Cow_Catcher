@@ -14,7 +14,7 @@ public class CarScript : MonoBehaviour
 
     public Vector2 carDirection;
     public float spriteT = 0;
-    public float prevTheta = 0;
+    //public float prevTheta = 0;
     public float theta = 90;
     public float x = 0;
     public float y = 1;
@@ -84,7 +84,7 @@ public class CarScript : MonoBehaviour
         }
 
         //spriteT = theta - prevTheta;
-        prevTheta = theta;
+        //prevTheta = theta;
         x = (float)Math.Cos(theta * Math.PI/180);
         y = (float)Math.Sin(theta * Math.PI/180);
         carDirection.x = x; carDirection.y = y;
