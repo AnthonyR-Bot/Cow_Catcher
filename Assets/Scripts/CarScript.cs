@@ -61,12 +61,12 @@ public class CarScript : MonoBehaviour
                 velocity += (float)(0.025);
             }
         }
-        if(velocity > maxPosVel){
+        /*if(velocity > maxPosVel){
             velocity = maxPosVel;
         }
         if(velocity < maxNegVel){
             velocity = maxNegVel;
-        }
+        }*/
 
 
 

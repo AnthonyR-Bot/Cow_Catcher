@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour
     {
         target = MC.transform.position;
         me = this.gameObject.transform.position;
-        enemyDirection = Quaternion(target.x, target.y);
+        //enemyDirection = Quaternion(target.x, target.y);
         this.transform.rotation = enemyDirection;
     }
 }
