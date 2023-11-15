@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public Rigidbody2D rigidBody;
     public GameObject MC;
     public GameObject me;
     public Vector2 target;
@@ -15,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     private float myRot;
     private float spriteT = 0;
     private float theta;
+    private float x, y;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,22 +41,27 @@ public class EnemyScript : MonoBehaviour
             angle += 360;
         }
         //me.transform.Rotate(0, 0, (float)0.1, Space.Self);
+        if(myPos.x > target.x){
+            angle += 180;
+        }
 
         myRot = me.transform.eulerAngles.z;
-        if(myRot < angle){
+        if(myRot < angle && !(myRot < 90 && angle > 270) || (myRot > 270 && angle < 90)){
             spriteT = turningRate;
             theta += turningRate;
-        }else if(myRot > angle){
+        }else if(myRot > angle || (myRot < 90 && angle > 270)){
             spriteT = -turningRate;
             theta -= turningRate;
         }else{
             spriteT = 0;
         }
-        Debug.Log("MyRot: "+myRot + "\n");
-        Debug.Log("angle: " + angle + "\n\n");
-        //x = (float)Math.Cos(theta * Math.PI/180);
-        //y = (float)Math.Sin(theta * Math.PI/180);
-        //carDirection.x = x; carDirection.y = y;
+        
+        //Debug.Log("MyRot: "+ myRot + "\n");
+        //Debug.Log("angle: " + angle + "\n\n");
+        y = -(float)Math.Cos(theta * Math.PI/180);
+        x = (float)Math.Sin(theta * Math.PI/180);
+        enemyDirection.x = x; enemyDirection.y = y;
         me.transform.Rotate(0, 0, spriteT, Space.Self);
+        rigidBody.velocity = 3 * enemyDirection;
     }
 }

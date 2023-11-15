@@ -15,4 +15,4 @@ MonoBehaviour:
   name: 
   cooldownTime: 1
   activeTime: 0.1
-  boostVelocity: 50
+  boostVelocity: 20
