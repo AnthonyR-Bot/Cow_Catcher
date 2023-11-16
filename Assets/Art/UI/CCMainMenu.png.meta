@@ -421,9 +421,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 162
-        width: 16
-        height: 16
+        y: 148
+        width: 48
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -777,10 +777,10 @@ TextureImporter:
       name: CCMainMenu_31
       rect:
         serializedVersion: 2
-        x: 96
-        y: 146
-        width: 16
-        height: 16
+        x: 99
+        y: 151
+        width: 42
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3587,6 +3587,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CCMainMenu_165
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 116
+        width: 58
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7460b58a319014cb391e9522c0eca63c
+      internalID: 719257395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3672,6 +3693,7 @@ TextureImporter:
       CCMainMenu_162: 134065770
       CCMainMenu_163: -1020003495
       CCMainMenu_164: 319778325
+      CCMainMenu_165: 719257395
       CCMainMenu_17: -1986362680
       CCMainMenu_18: 642243060
       CCMainMenu_19: -2129901279
